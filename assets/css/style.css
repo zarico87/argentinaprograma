@@ -9,6 +9,7 @@
   --color-secundario: #E84C57;
   --background-gradient-1: linear-gradient(90deg, rgba(12,102,150,0.2) 0%, rgba(12,102,150,0.2) 50%, rgba(12,102,150,0.4) 100%);
   --shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+  --font-family:'Ubuntu',sans-serif;
 }
 
 *{
@@ -43,11 +44,21 @@ header{
   align-items: center;
   gap: 1vw;
   margin-left: 4rem;
-  width: 30px;
+ 
 }
-
-.logo img{
-  width: 100%;
+.logo-img{
+  width:60px;
+  
+}
+.logo-img img{
+    width:100% ;
+}
+.logo h2{
+  font-family: var(--font-family);
+  color:var(--color-principal);
+  font-size: 35px;
+  text-align: center;
+  
 }
 
 nav{
@@ -65,6 +76,7 @@ nav a{
   padding: .5rem;
   color: whitesmoke;
   text-decoration: none;
+  font-family: var(--font-family);
 }
 
 
@@ -157,13 +169,14 @@ nav a:hover{
   display: flex;
   flex-direction: column;
   gap: 20px;
+  text-shadow: 1px 1px #3e3e3e;
   
 }
 
 .hero h1{
   font-size: 52px;
   color: var(--color-secundario);
-  font-family: 'Ubuntu',sans-serif;
+  font-family: var(--font-family);
 }
 
 .hero p{
@@ -355,16 +368,18 @@ nav a:hover{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1vw;
+  gap: 2vw;
 }
 
 .profile{
-  padding-top: 10px;
+  padding:1.5rem;
   max-width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  background-color: #E0E5E9;
+  border-radius:10px ;
 }
 
 .profile:hover{
@@ -392,6 +407,7 @@ nav a:hover{
   flex-direction: column;
   align-items: center;
   gap: 10px;
+ 
 }
 
 .profile-info p{
@@ -405,7 +421,7 @@ footer{
   padding: 5px;
   background-color: var(--color-secundario);
   color: whitesmoke;
-  font-family: 'Ubuntu',sans-serif;
+  font-family: var(--font-family);
 }
 
 @media screen and (max-width: 992px){
@@ -551,4 +567,13 @@ footer{
   /* ACERCA DE */
 
 
+}
+footer{
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: whitesmoke;
+  font-family: var(--font-family);
+  text-shadow: var(--shadow);
 }
