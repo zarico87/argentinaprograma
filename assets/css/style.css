@@ -1,4 +1,3 @@
-/* @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"); */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
@@ -7,26 +6,34 @@
 :root{
   --color-principal: #e30613;
   --color-secundario: #E84C57;
-  --background-gradient-1: linear-gradient(90deg, rgba(12,102,150,0.2) 0%, rgba(12,102,150,0.2) 50%, rgba(12,102,150,0.4) 100%);
+  /* gradiente azul como estaba */
+  /* --background-gradient-1: linear-gradient(90deg, 
+                                          rgba(12,102,150,0.1) 0%, 
+                                          rgba(12,102,150,0.15) 50%, 
+                                          rgba(12,102,150,0.4) 100%); */
+
+  /* gradiente mas claro */
+  --background-gradient-1: linear-gradient(90deg, #f5f7fa 0%, #c3cfe2 100%);;
   --shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
-  --font-family:'Ubuntu',sans-serif;
+  --font-family: 'Ubuntu',sans-serif; 
 }
 
 *{
   margin: 0;
   padding: 0; 
+  box-sizing: border-box;
   font-family: sans-serif;
+  font-size: 16px;
  }
 
 body{
   min-height: 100vh;
 }
-
 /* BASE */
-
 
 /* HEADER */
 header{
+  z-index:99;
   position: fixed;
   top: 0;
   width: 100vw;
@@ -34,9 +41,13 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:rgba(0, 0, 0, 0.8);
+  background-color:rgba(0, 0, 0, 0.9);
   color: whitesmoke;
   box-shadow: var(--shadow);
+}
+
+header a{
+  text-decoration: none;
 }
 
 .logo{
@@ -44,21 +55,20 @@ header{
   align-items: center;
   gap: 1vw;
   margin-left: 4rem;
- 
 }
-.logo-img{
-  width:60px;
-  
-}
-.logo-img img{
-    width:100% ;
-}
+
 .logo h2{
+  font-size: 2rem;
   font-family: var(--font-family);
-  color:var(--color-principal);
-  font-size: 35px;
-  text-align: center;
-  
+  color: var(--color-principal);
+}
+
+.logo-img{
+  width: 60px;
+}
+
+.logo-img img{
+  width: 100%;
 }
 
 nav{
@@ -69,7 +79,6 @@ nav{
   width: auto;
   padding: 0;
   background: transparent;
-  
 }
 
 nav a{
@@ -78,7 +87,6 @@ nav a{
   text-decoration: none;
   font-family: var(--font-family);
 }
-
 
 nav a:hover{
   color: var(--color-secundario);
@@ -95,11 +103,9 @@ nav a:hover{
 .text-center{
   text-align: center;
 }
-
 /* HEADER */
 
 /* GENERAL */
-
 .content{
   display: flex;
   justify-content: center;
@@ -130,6 +136,7 @@ nav a:hover{
 .invalid-input{
   border: 3px solid rgb(141, 41, 41) !important;
 }
+
 .btn{
   border-radius: 5px;
   border: none;
@@ -137,7 +144,7 @@ nav a:hover{
   background-color: var(--color-principal);
   box-shadow: var(--shadow);
   color: whitesmoke;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .btn-green:hover,
@@ -146,17 +153,14 @@ nav a:hover{
   background-color: var(--color-secundario);
   cursor: pointer;
 }
-
 /* GENERAL */
 
 /* INDEX */
-
-.index-content{
+.hero-content{
   background: var(--background-gradient-1);
   display: flex;
   flex-direction: column;
   gap: 20px;
-    
 }
 
 .hero{
@@ -165,18 +169,19 @@ nav a:hover{
   justify-content: space-around;
   align-items: center;
 }
+
 .hero-title{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  text-shadow: 1px 1px #3e3e3e;
-  
 }
 
 .hero h1{
-  font-size: 52px;
+  font-size: 3.25rem;
   color: var(--color-secundario);
   font-family: var(--font-family);
+  text-shadow: var(--h1-shadow);
+  text-shadow: 1px 1px #3e3e3e;
 }
 
 .hero p{
@@ -192,21 +197,15 @@ nav a:hover{
 .hero-img img{
   width: 100%;
 }
-
 /* INDEX */
 
 /* CONVERSION */
-
 .conversion-content{
   background: var(--background-gradient-1);
-
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
-
-
 
 #conversionForm{
   width: 70%;
@@ -217,15 +216,12 @@ nav a:hover{
 }
 
 #conversionForm h2{
-  font-size: 32px;
+  font-size: 2rem;
   text-align: center;
   color: var(--color-secundario);
 }
 
-
-
 #conversionForm .formularioContent{
-  
   display: flex;
   align-items: center;
   gap: 10px;
@@ -241,14 +237,14 @@ nav a:hover{
 #conversionForm .inputGroup input{
   font-size: 16px;
   border-radius: 5px;
-  padding: 8px;
+  padding: .5rem;
   box-shadow: var(--shadow);
   border: none;
 }
+
 #conversionForm .conversionResult{
   min-height: 350px;
 }
-
 
 .result{
   border-bottom: 2px solid #3e3e3e;
@@ -261,8 +257,12 @@ nav a:hover{
   font-size: 1.25rem;
 }
 
-.conversion-result .conversion-footer{
-  font-size: 12px;
+#conversionResult .conversion-footer{
+  font-size: .75rem;
+}
+
+sup{
+  font-size: .75rem;
 }
 
 .conversion-details{
@@ -271,34 +271,59 @@ nav a:hover{
   margin-bottom: .5rem;
   align-items: baseline;
   height: 25px;
-  font-size: 14px;
 }
 /* CONVERSION */
 
-
 /* CONTACTO */ 
 .contact-content{
+  /* padding: 10px; */
   background: var(--background-gradient-1);
   gap: 10vw;
+  padding: 0 4rem;
+}
+
+.formulario{
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  width: 80%;
+}
+
+.formulario h2{
+  font-size: 2rem;
+  color: var(--color-secundario);
+  text-align: center;
 }
 
 #contactForm{
-  /* width: 70%; */
-  width: 50%;
+  /* width: 50%; */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  /* padding: 10vh 3vw; */
 }
 
-#contactForm h2{
-  font-size: 32px;
+/* #contactForm h2{
+  font-size: 2rem;
   color: var(--color-secundario);
+} */
+
+#contactForm div{
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  width: 100%;
 }
+
+#contactForm .columna{
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  width: 50%;
+}
+
 
 #contactForm .inputGroup{
-  /* width: 70%; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -308,15 +333,19 @@ nav a:hover{
 #contactForm .inputGroup input,
 #contactForm .inputGroup select,
 #contactForm .inputGroup textarea{
-  font-size: 16px;
+  font-size: 1rem;
   border-radius: 5px;
-  padding: 8px;
+  padding: .75rem .5rem;
   box-shadow: var(--shadow);
   border: none;
 }
 
+#contactForm .inputGroup textarea{
+  height: 8rem;
+}
+
 #contactForm .btn{
-  margin-top: 10px;
+  margin-top: .75rem;
   width: 20vw;
 }
 
@@ -327,7 +356,6 @@ nav a:hover{
 .contact-img img{
   width: 100%;
 }
-
 /* CONTACTO */
 
 /* ACERCA DE */
@@ -337,6 +365,7 @@ nav a:hover{
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  padding-top: 5vw;
 }
 
 .about-company{
@@ -349,6 +378,7 @@ nav a:hover{
 
 .about-company h2,
 .about-us h2{
+  font-size: 2rem;
   color: var(--color-secundario);
 }
 
@@ -370,16 +400,16 @@ nav a:hover{
   justify-content: center;
   gap: 2vw;
 }
-/* cartas */
+
 .profile{
-  padding:1.5rem;
+  padding: 1.5rem;
   max-width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 2rem;
   background-color: whitesmoke;
-  border-radius:10px ;
+  border-radius: 10px;
 }
 
 .profile:hover{
@@ -388,26 +418,23 @@ nav a:hover{
 }
 
 .profile-img{
-  /* border-radius: 50%; */
   width: 100%;
   max-width: 120px;
   height: 100%;
   max-height: 120px;
-  
 }
+
 .profile-img img{
   width: 100%;
   border-radius: 50%;
   box-shadow: var(--shadow);
 }
 
-
 .profile-info{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
- 
 }
 
 .profile-info p{
@@ -418,10 +445,11 @@ nav a:hover{
 footer{
   display: flex;
   justify-content: center;
-  padding: 5px;
-  background-color: var(--color-secundario);
+  padding: 1.5rem;
+  background-color: rgb(0,0,0);
   color: whitesmoke;
   font-family: var(--font-family);
+  text-shadow: var(--h2-shadow);
 }
 
 @media screen and (max-width: 992px){
@@ -430,23 +458,24 @@ footer{
     background-color: transparent;
     color: whitesmoke;
     border: none;
-    font-size: 25px;
+    font-size: 1.5rem;
     display:block;
-    margin-right: 2rem;
+    margin-right: 1rem;
   }
 
   .logo{
-    margin-left: 2rem;
+    margin-left: 1rem;
+    gap: 3vw;
   }
 
   nav{
-    opacity: .9;
+    background-color: rgb(0,0,0,0.9);
     display: none;
     position: absolute;
     width: 100%;
-    top: 3.25rem;
+    top: 5.5rem;
     padding: 1rem;
-    background-color: rgb(0,0,0,0.8);
+    
   }
 
   .nav-link:hover{
@@ -454,8 +483,11 @@ footer{
     font-weight: normal;
   }
 
-  /* INDEX */
+  .bi-list{
+    font-size: 3rem;
+  }
 
+  /* INDEX */
   .hero{
     flex-direction: column;
     align-items: center;
@@ -474,20 +506,38 @@ footer{
   .hero-img{
     width: 50vw;
   }
-
   /* INDEX */
 
-
   /* CONTACTO */
-  #contactForm{
-    width: 80%;
+  .contact-content{
+    padding: 0 2rem;
+  }
+
+  .formulario{
+    width: 100%;
+  }
+
+  
+
+  #contactForm .columna{
+    gap: 5vw;
+    width: 100%;
+  }
+
+  #contactForm .inputGroup textarea{
+    height: 9.5rem;
   }
 
   .contact-img{
     display: none;
   }
+  /* CONTACTO */
 
   /* ACERCA DE */
+  .about-content{
+    padding-top: 10vw;
+  }
+
   .about-company{
     width: 90%;
   }
@@ -495,24 +545,40 @@ footer{
   .about-us{
     width: 90%;
   }
+  /* ACERCA DE */
 }
 
 @media screen and (max-width: 768px){
 
+  .logo h2{
+    font-size: 1.5rem;
+  }
+
+  .logo-img{
+    width: 40px;
+  }
+
+  nav{
+    top: 4.25rem;
+  }
+
+  .bi-list{
+    font-size: 2rem;
+  }
+
   .hero h1{
-    font-size: 32px;
+    font-size: 3rem; 
   }
 
   .hero p{
-    font-size: 20px;
+    font-size: 1.25rem;
     width: 90vw;
     line-height: 1.5rem;
   }
 
   /* CONVERSION */
-
   .conversion-content{
-    padding: 0 10px;
+    padding: 0 .75rem;
   }
 
   #conversionForm{
@@ -532,22 +598,26 @@ footer{
     padding: .5rem 0;
     width: 100%;
   }
-
   /* CONVERSION */
 
   /* CONTACTO */
-  #contactForm{
-    padding: 0 10px;
+  .contact-content{
+    padding: 0 2rem;
   }
 
-  #contactForm {
+  .formulario{
     width: 100%;
   }
 
-  #contactForm .btn-contacto{
-    width: 50vw;
+  #contactForm div{
+    /* display: block; */
+    flex-direction: column;
+    gap: 5vw;
   }
 
+  #contactForm .btn-contacto{
+    width: 100%;
+  }
   /* CONTACTO */
 
   /* ACERCA DE */
@@ -557,7 +627,11 @@ footer{
   }
 
   .about-us-content{
-    gap: 20px;
+    gap: 5vh;
+  }
+
+  .profile{
+    padding: 2.5rem;
   }
 
   .profile-img{
@@ -565,15 +639,4 @@ footer{
     max-height: 200px;
   }
   /* ACERCA DE */
-
-
-}
-footer{
-  display: flex;
-  justify-content: center;
-  padding: 25px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: whitesmoke;
-  font-family: var(--font-family);
-  text-shadow: var(--shadow);
 }

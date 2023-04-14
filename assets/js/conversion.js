@@ -52,7 +52,7 @@ const conversionDolares = (dolares) => {
 
             <p class="text-center conversion-detail">Detalles</p>
             
-            <div class="conversion-details d-flex justify-content-between mb-2">
+            <div class="conversion-details">
               <p><strong>Conversion al dolar oficial</strong></p>
               <p>$ ${valorOficial.toFixed(2)}</p>
             </div>
@@ -82,6 +82,11 @@ const conversionDolares = (dolares) => {
           </div>
         `
         const conversionResultado = document.getElementById('conversionResult');
+        
+        /**
+         * en este caso el setTimeout lo usamos para que el boton tenga una pequeña animacion
+         * como si estuviera procesando datos
+         */
         
         setTimeout(() => {
           conversionResultado.innerHTML = html;
