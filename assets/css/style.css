@@ -91,9 +91,7 @@ nav a:hover{
   color: var(--color-secundario);
 }
 
-.link-active{
-  font-weight: bold;
-}
+
 
 .btn-menu{
   display: none;
@@ -112,9 +110,7 @@ nav a:hover{
   min-height: 100vh;
 }
 
-.custom-shadow{
-  box-shadow: var(--shadow);
-}
+
 
 .title{
   margin-bottom: 1rem;
